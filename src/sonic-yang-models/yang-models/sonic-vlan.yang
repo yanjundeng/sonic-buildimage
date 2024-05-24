@@ -43,6 +43,9 @@ module sonic-vlan {
 
 	description "VLAN yang Module for SONiC OS";
 
+    revision 2024-05-23 {
+        description "Add SAG support";
+    }
 
 	revision 2024-03-07 {
 		description "Add Constraints that are implemented in CLI";
@@ -117,16 +120,21 @@ module sonic-vlan {
 					}
 				}
 
+                leaf loopback_action {
+                    description "Packet action when a packet ingress and gets routed on the same IP interface";
+                    type stypes:loopback_action;
+                }
+
+                leaf static_anycast_gateway {
+                    description "Enable/disable static anycast gateway for the vlan interface";
+                    type boolean;
+                    default false;
+                }
+
 				leaf ipv6_use_link_local_only {
 					description "Enable/Disable IPv6 link local address on vlan interface";
 					type stypes:mode-status;
 					default disable;
-				}
-
-
-				leaf loopback_action {
-					description "Packet action when a packet ingress and gets routed on the same IP interface";
-					type stypes:loopback_action;
 				}
 			}
 			/* end of VLAN_INTERFACE_LIST */
