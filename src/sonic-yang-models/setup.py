@@ -280,6 +280,7 @@ setup(
                          './cvlyang-models/sonic-vxlan.yang',
                          './cvlyang-models/sonic-warm-restart.yang',
                          './cvlyang-models/sonic-lldp.yang',
+                         './cvlyang-models/sonic-static-anycast-gateway.yang',
                          './cvlyang-models/sonic-scheduler.yang',
                          './cvlyang-models/sonic-wred-profile.yang',
                          './cvlyang-models/sonic-queue.yang',
